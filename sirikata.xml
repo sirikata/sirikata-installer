@@ -2,6 +2,8 @@
     <shortName>sirikata</shortName>
     <fullName>Sirikata</fullName>
     <version></version>
+    <readmeFile>sirikata.git/README</readmeFile>
+    <licenseFile>sirikata.git/LICENSE</licenseFile>
     <componentList>
         <component>
             <name>default</name>
@@ -43,12 +45,34 @@
                     <destination>${installdir}</destination>
                     <name>programfileswindows</name>
                     <platforms>windows</platforms>
+                    <distributionFileList>
+                        <distributionDirectory>
+                            <origin>sirikata_win32/bin</origin>
+                        </distributionDirectory>
+                        <distributionDirectory>
+                            <origin>sirikata_win32/lib</origin>
+                        </distributionDirectory>
+                        <distributionDirectory>
+                            <origin>sirikata_win32/share</origin>
+                        </distributionDirectory>
+                    </distributionFileList>
                 </folder>
                 <folder>
                     <description>Program Files</description>
                     <destination>${installdir}</destination>
                     <name>programfilesosx</name>
                     <platforms>osx</platforms>
+                    <distributionFileList>
+                        <distributionDirectory>
+                            <origin>sirikata_mac/bin</origin>
+                        </distributionDirectory>
+                        <distributionDirectory>
+                            <origin>sirikata_mac/lib</origin>
+                        </distributionDirectory>
+                        <distributionDirectory>
+                            <origin>sirikata_mac/share</origin>
+                        </distributionDirectory>
+                    </distributionFileList>
                 </folder>
             </folderList>
             <startMenuShortcutList>
@@ -85,3 +109,4 @@
         </directoryParameter>
     </parameterList>
 </project>
+

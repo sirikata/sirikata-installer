@@ -2,3 +2,13 @@ These is the installer configuration and scripts for Sirikata. See
 Sirikata's home page at http://sirikata.com for details on the
 project. Here we have the installer project for BitRock InstallBuilder
 and some helper scripts.
+
+The sirikata.xml InstallBuilder project has the majority of the
+configuration. To create installers for a release, make sure the raw
+packages are available in http://sirikata.com/releases/, run
+create-release.sh to get things setup, then run InstallBuilder and
+generate the installers. You should *not* use the sirikata.xml
+file. The create-release.sh script generates a new copy,
+sirikata-VERSION.xml for the given release. If it can be found, the
+script will run InstallBuilder from the command line, completing the
+process and leaving you with two installers.
