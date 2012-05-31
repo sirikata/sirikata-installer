@@ -5,6 +5,8 @@ sirikata-*-win32.zip
 sirikata.git
 sirikata_mac/
 sirikata_win32/
+vcredist_x86.exe
+dxwebsetup.exe
 
 # Output files
 sirikata-*-autoupdate.app

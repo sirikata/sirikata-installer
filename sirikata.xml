@@ -202,6 +202,65 @@ update_download_location = ${system_temp_directory}
                 </startMenuShortcut>
             </startMenuShortcutList>
         </component>
+        <component>
+            <name>vcruntime</name>
+            <description>Visual C++ Runtime</description>
+            <canBeEdited>0</canBeEdited>
+            <selected>1</selected>
+            <show>0</show>
+            <folderList>
+                <folder>
+                    <destination>${installdir}</destination>
+                    <name>vcfiles</name>
+                    <platforms>windows</platforms>
+                    <actionList>
+                        <runProgram>
+                            <program>${installdir}/vcredist_x86.exe</program>
+                            <programArguments>/q:a /c:"msiexec /i vcredist.msi /qn /l*v ${system_temp_directory.dos}\vcredist_x86.log"</programArguments>
+                            <progressText>Installing VC++ 8 Runtime</progressText>
+                        </runProgram>
+                    </actionList>
+                    <distributionFileList>
+                        <distributionFile>
+                            <origin>vcredist_x86.exe</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                </folder>
+            </folderList>
+        </component>
+        <component>
+            <name>dxruntime</name>
+            <description>DirectX 9 Runtime</description>
+            <canBeEdited>0</canBeEdited>
+            <selected>1</selected>
+            <show>0</show>
+            <folderList>
+                <folder>
+                    <destination>${installdir}</destination>
+                    <name>dxfiles</name>
+                    <platforms>windows</platforms>
+                    <actionList>
+                        <runProgram>
+                            <program>${installdir}/dxwebsetup.exe</program>
+                            <programArguments></programArguments>
+                            <progressText>Installing DirectX 9 Runtime</progressText>
+                        </runProgram>
+                        <showText>
+                            <text>You need the DirectX runtime to run the Sirikata client, but it doesn't appear to be installed. Follow the installation instructions that appear next.</text>
+                            <title>DirectX Runtime Required</title>
+                        </showText>
+                    </actionList>
+                    <distributionFileList>
+                        <distributionFile>
+                            <origin>dxwebsetup.exe</origin>
+                        </distributionFile>
+                    </distributionFileList>
+                    <ruleList>
+                        <fileTest condition="exists" negate="1" path="${windows_folder_system}/d3d9.dll"/>
+                    </ruleList>
+                </folder>
+            </folderList>
+        </component>
     </componentList>
     <initializationActionList>
         <setInstallerVariable>

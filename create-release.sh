@@ -41,6 +41,11 @@ echo "Grabbing and extracting raw packages..."
     git checkout v${VERSION} && \
     cd ..
 
+# And grab the visual studio redistributable for the windows version
+[ -e vcredist_x86.exe ] || wget http://download.microsoft.com/download/d/d/9/dd9a82d0-52ef-40db-8dab-795376989c03/vcredist_x86.exe
+# and the DirectX installer
+[ -e dxwebsetup.exe ] || wget http://download.microsoft.com/download/1/7/1/1718CCC4-6315-4D8E-9543-8E28A4E18C4C/dxwebsetup.exe
+
 # Generate a version-specific project file. When we can find the
 # InstallBuilder binary, we could actually just use --setvars, but to
 # support not having it in your PATH, we just generate a copy with the
