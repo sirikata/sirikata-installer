@@ -203,11 +203,18 @@ update_download_location = ${system_temp_directory}
             </startMenuShortcutList>
         </component>
     </componentList>
+    <initializationActionList>
+        <setInstallerVariable>
+            <name>is_fresh_install</name>
+            <value>1</value>
+        </setInstallerVariable>
+    </initializationActionList>
     <preInstallationActionList>
 	<!-- detect existing installation, then switch to
            upgrade mode and display a note. -->
 	<actionGroup>
             <actionList>
+                <setInstallerVariable name="is_fresh_install" value="0"/>
                 <setInstallerVariable name="project.allowComponentSelection" value="0"/>
                 <setInstallerVariable name="project.installationType" value="upgrade"/>
 
@@ -230,6 +237,7 @@ update_download_location = ${system_temp_directory}
     <finalPageActionList>
         <launchBrowser>
             <explanation>Launch page with list of public worlds</explanation>
+            <run>${is_fresh_install}</run>
             <url>http://sirikata.com/wiki/index.php?title=List_of_Worlds</url>
         </launchBrowser>
     </finalPageActionList>
