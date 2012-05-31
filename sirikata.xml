@@ -184,6 +184,11 @@ update_download_location = ${system_temp_directory}
               </text>
                 </writeFile>
             </postInstallationActionList>
+            <preUninstallationActionList>
+                <deleteFile>
+                    <path>${installdir}/update.ini</path>
+                </deleteFile>
+            </preUninstallationActionList>
             <startMenuShortcutList>
                 <startMenuShortcut>
                     <comment>Update ${product_fullname}</comment>
@@ -251,3 +256,4 @@ update_download_location = ${system_temp_directory}
         </booleanParameter>
     </parameterList>
 </project>
+
