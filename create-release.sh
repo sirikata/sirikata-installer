@@ -47,8 +47,9 @@ else
     ${INSTALLBUILDER} build sirikata-$VERSION.xml windows
     ${INSTALLBUILDER} build sirikata-$VERSION.xml osx
     echo "Copying to current directory..."
-    cp -r `dirname ${INSTALLBUILDER}`/../output/sirikata-${VERSION}-osx-installer.app .
-    cp -r `dirname ${INSTALLBUILDER}`/../output/sirikata-${VERSION}-windows-installer.exe .
+    cp -r `dirname ${INSTALLBUILDER}`/../output/sirikata-${VERSION}-osx-installer.app sirikata-${VERSION}-mac-installer.app
+    genisoimage -D -V "sirikata-${VERSION}" -no-pad -r -apple -o sirikata-${VERSION}-mac-installer.dmg sirikata-${VERSION}-mac-installer.app
+    cp -r `dirname ${INSTALLBUILDER}`/../output/sirikata-${VERSION}-windows-installer.exe sirikata-${VERSION}-win32-installer.exe
     echo "Done"
 
     rm sirikata-${VERSION}.xml
