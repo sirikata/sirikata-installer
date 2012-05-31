@@ -2,8 +2,6 @@
     <shortName>sirikata</shortName>
     <fullName>Sirikata</fullName>
     <version></version>
-    <readmeFile>sirikata.git/README</readmeFile>
-    <licenseFile>sirikata.git/LICENSE</licenseFile>
     <leftImage>images/left_side_image.png</leftImage>
     <logoImage>images/logo.png</logoImage>
     <componentList>
