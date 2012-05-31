@@ -145,11 +145,10 @@
         <booleanParameter>
             <name>register_slauncher</name>
             <title>Sirikata Links</title>
-            <description>Launch Sirikata when clicking sirikata: links in your browser</description>
+            <description>Launch Sirikata when clicking sirikata: links in your browser?</description>
             <explanation>Sirikata can launch a client when you click special links, starting with sirikata:, in your browser. Enable this if you want to register Sirikata with the operating system to handle these links.</explanation>
             <value>yes</value>
             <default>yes</default>
         </booleanParameter>
     </parameterList>
 </project>
-
