@@ -116,6 +116,12 @@
     <enableTimestamp>1</enableTimestamp>
     <saveRelativePaths>1</saveRelativePaths>
     <vendor>Sirikata Project</vendor>
+    <finalPageActionList>
+        <launchBrowser>
+            <explanation>Launch page with list of public worlds</explanation>
+            <url>http://sirikata.com/wiki/index.php?title=List_of_Worlds</url>
+        </launchBrowser>
+    </finalPageActionList>
     <parameterList>
         <directoryParameter>
             <name>installdir</name>
