@@ -194,6 +194,7 @@ update_download_location = ${system_temp_directory}
             </ruleList>
         </runProgram>
     </preUninstallationActionList>
+    <allowComponentSelection>1</allowComponentSelection>
     <disableSplashScreen>1</disableSplashScreen>
     <enableRollback>1</enableRollback>
     <enableTimestamp>1</enableTimestamp>
@@ -228,3 +229,4 @@ update_download_location = ${system_temp_directory}
         </booleanParameter>
     </parameterList>
 </project>
+
