@@ -4,6 +4,8 @@
     <version></version>
     <readmeFile>sirikata.git/README</readmeFile>
     <licenseFile>sirikata.git/LICENSE</licenseFile>
+    <leftImage>images/left_side_image.png</leftImage>
+    <logoImage>images/logo.png</logoImage>
     <componentList>
         <component>
             <name>default</name>
@@ -89,6 +91,7 @@
             </startMenuShortcutList>
         </component>
     </componentList>
+    <disableSplashScreen>1</disableSplashScreen>
     <enableRollback>1</enableRollback>
     <enableTimestamp>1</enableTimestamp>
     <saveRelativePaths>1</saveRelativePaths>
