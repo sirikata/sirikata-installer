@@ -76,6 +76,20 @@
                 </folder>
             </folderList>
             <postInstallationActionList>
+	<!-- Temporary fix for bad permissions in
+              slauncher_helper.app as of 0.0.24. This doesn't make the
+              app work properly since it was broken in another way as
+              well, but it does get it registered without causing an
+              error during installation. -->
+	<changePermissions>
+                    <files>${installdir}/lib/sirikata/slauncher_helper.app/Contents/MacOS/applet</files>
+                    <permissions>755</permissions>
+                    <ruleList>
+                        <platformTest>
+                            <type>osx</type>
+                        </platformTest>
+                    </ruleList>
+                </changePermissions>
                 <runProgram>
                     <program>open</program>
                     <programArguments>${installdir}/lib/sirikata/slauncher_helper.app</programArguments>
