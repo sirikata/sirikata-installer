@@ -91,6 +91,26 @@
             </startMenuShortcutList>
         </component>
     </componentList>
+    <postInstallationActionList>
+        <runProgram>
+            <program>${installdir}/bin/slauncher</program>
+            <programArguments>--register=true</programArguments>
+            <ruleList>
+                <platformTest>
+                    <type>osx</type>
+                </platformTest>
+            </ruleList>
+        </runProgram>
+        <runProgram>
+            <program>${installdir}/bin/slauncher.exe</program>
+            <programArguments>--register=true</programArguments>
+            <ruleList>
+                <platformTest>
+                    <type>windows</type>
+                </platformTest>
+            </ruleList>
+        </runProgram>
+    </postInstallationActionList>
     <disableSplashScreen>1</disableSplashScreen>
     <enableRollback>1</enableRollback>
     <enableTimestamp>1</enableTimestamp>
