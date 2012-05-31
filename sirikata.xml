@@ -149,7 +149,7 @@
         </component>
         <component>
             <name>autoupdater</name>
-            <description>Includes tool to install updates</description>
+            <description>Updater Tool</description>
             <canBeEdited>1</canBeEdited>
             <selected>1</selected>
             <show>1</show>
@@ -251,4 +251,3 @@ update_download_location = ${system_temp_directory}
         </booleanParameter>
     </parameterList>
 </project>
-
