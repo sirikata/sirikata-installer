@@ -75,6 +75,43 @@
                     </distributionFileList>
                 </folder>
             </folderList>
+            <postInstallationActionList>
+                <runProgram>
+                    <program>open</program>
+                    <programArguments>${installdir}/lib/sirikata/slauncher_helper.app</programArguments>
+                    <ruleList>
+                        <platformTest>
+                            <type>osx</type>
+                        </platformTest>
+                        <isTrue>
+                            <value>${register_slauncher}</value>
+                        </isTrue>
+                    </ruleList>
+                </runProgram>
+                <runProgram>
+                    <program>${installdir}/bin/slauncher.exe</program>
+                    <programArguments>--register=true</programArguments>
+                    <ruleList>
+                        <platformTest>
+                            <type>windows</type>
+                        </platformTest>
+                        <isTrue>
+                            <value>${register_slauncher}</value>
+                        </isTrue>
+                    </ruleList>
+                </runProgram>
+            </postInstallationActionList>
+            <preUninstallationActionList>
+                <runProgram>
+                    <program>${installdir}/bin/slauncher.exe</program>
+                    <programArguments>--unregister=true</programArguments>
+                    <ruleList>
+                        <platformTest>
+                            <type>windows</type>
+                        </platformTest>
+                    </ruleList>
+                </runProgram>
+            </preUninstallationActionList>
             <startMenuShortcutList>
                 <startMenuShortcut>
                     <comment>Uninstall ${product_fullname}</comment>
@@ -157,43 +194,6 @@ update_download_location = ${system_temp_directory}
             </ruleList>
         </actionGroup>
     </preInstallationActionList>
-    <postInstallationActionList>
-        <runProgram>
-            <program>open</program>
-            <programArguments>${installdir}/lib/sirikata/slauncher_helper.app</programArguments>
-            <ruleList>
-                <platformTest>
-                    <type>osx</type>
-                </platformTest>
-                <isTrue>
-                    <value>${register_slauncher}</value>
-                </isTrue>
-            </ruleList>
-        </runProgram>
-        <runProgram>
-            <program>${installdir}/bin/slauncher.exe</program>
-            <programArguments>--register=true</programArguments>
-            <ruleList>
-                <platformTest>
-                    <type>windows</type>
-                </platformTest>
-                <isTrue>
-                    <value>${register_slauncher}</value>
-                </isTrue>
-            </ruleList>
-        </runProgram>
-    </postInstallationActionList>
-    <preUninstallationActionList>
-        <runProgram>
-            <program>${installdir}/bin/slauncher.exe</program>
-            <programArguments>--unregister=true</programArguments>
-            <ruleList>
-                <platformTest>
-                    <type>windows</type>
-                </platformTest>
-            </ruleList>
-        </runProgram>
-    </preUninstallationActionList>
     <allowComponentSelection>1</allowComponentSelection>
     <disableSplashScreen>1</disableSplashScreen>
     <enableRollback>1</enableRollback>
