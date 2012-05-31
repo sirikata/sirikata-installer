@@ -15,6 +15,9 @@ VERSION=$1
 # Clean out any old data
 rm -rf sirikata_win32
 rm -rf sirikata_mac
+rm -f sirikata-${VERSION}-mac-installer.app
+rm -f sirikata-${VERSION}-mac-installer.dmg
+rm -f sirikata-${VERSION}-win32-installer.exe
 
 # Grab and extract data
 ([ -e sirikata-$VERSION-win32.zip ] || wget http://sirikata.com/releases/win32/sirikata-$VERSION-win32.zip) && \
