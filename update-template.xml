@@ -1,0 +1,19 @@
+<installerInformation>
+  <versionId>__VERSIONINT__</versionId>
+  <version>__VERSION__</version>
+  <platformFileList>
+    <platformFile>
+      <filename>win32/sirikata-__VERSION__-win32-installer.exe</filename>
+      <platform>windows</platform>
+    </platformFile>
+    <platformFile>
+      <filename>mac/sirikata-__VERSION__-mac-installer.tgz</filename>
+      <platform>osx</platform>
+    </platformFile>
+  </platformFileList>
+  <downloadLocationList>
+    <downloadLocation>
+      <url>http://sirikata.com/releases/</url>
+    </downloadLocation>
+  </downloadLocationList>
+</installerInformation>

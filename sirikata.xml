@@ -1,14 +1,14 @@
 <project>
     <shortName>Sirikata</shortName>
     <fullName>Sirikata</fullName>
-    <version></version>
+    <version>__VERSION__</version>
     <leftImage>images/left_side_image.png</leftImage>
     <logoImage>images/logo.png</logoImage>
     <componentList>
         <component>
-            <name>default</name>
-            <description>Default Component</description>
-            <canBeEdited>1</canBeEdited>
+            <name>Sirikata</name>
+            <description>Sirikata Runtime</description>
+            <canBeEdited>0</canBeEdited>
             <selected>1</selected>
             <show>1</show>
             <folderList>
@@ -88,7 +88,75 @@
                 </startMenuShortcut>
             </startMenuShortcutList>
         </component>
+        <component>
+            <name>autoupdater</name>
+            <description>Includes tool to install updates</description>
+            <canBeEdited>1</canBeEdited>
+            <selected>1</selected>
+            <show>1</show>
+            <folderList>
+                <folder>
+                    <destination>${installdir}</destination>
+                    <name>autoupdaterwin</name>
+                    <platforms>windows</platforms>
+                    <distributionFileList>
+                        <distributionFile origin="sirikata-win32-autoupdate.exe"/>
+                    </distributionFileList>
+                </folder>
+                <folder>
+                    <destination>${installdir}</destination>
+                    <name>autoupdaterosx</name>
+                    <platforms>osx</platforms>
+                    <distributionFileList>
+                        <distributionFile origin="sirikata-mac-autoupdate.app"/>
+                    </distributionFileList>
+                </folder>
+            </folderList>
+            <postInstallationActionList>
+                <writeFile>
+                    <path>${installdir}/update.ini</path>
+                    <text>
+[Update]
+
+url = http://sirikata.com/releases/update.xml
+version_id = __VERSIONINT__
+check_for_updates = 1
+update_download_location = ${system_temp_directory}
+              </text>
+                </writeFile>
+            </postInstallationActionList>
+            <startMenuShortcutList>
+                <startMenuShortcut>
+                    <comment>Update ${product_fullname}</comment>
+                    <name>Update ${product_fullname}</name>
+                    <runAsAdmin>0</runAsAdmin>
+                    <runInTerminal>0</runInTerminal>
+                    <windowsExec>${installdir}/sirikata-win32-autoupdate.exe</windowsExec>
+                    <windowsExecArgs></windowsExecArgs>
+                    <windowsIcon></windowsIcon>
+                    <windowsPath>${installdir}/</windowsPath>
+                </startMenuShortcut>
+            </startMenuShortcutList>
+        </component>
     </componentList>
+    <preInstallationActionList>
+	<!-- detect existing installation, then switch to
+           upgrade mode and display a note. -->
+	<actionGroup>
+            <actionList>
+                <setInstallerVariable name="project.allowComponentSelection" value="0"/>
+                <setInstallerVariable name="project.installationType" value="upgrade"/>
+
+	<!-- don't ask about installdir since it's an upgrade -->
+	<setInstallerVariable name="project.parameter(installdir).ask" value="0"/>
+            </actionList>
+
+	<!-- Assume an existing installation if ${installdir} directory exists -->
+	<ruleList>
+                <fileTest condition="exists" path="${installdir}/bin/cppoh.exe"/>
+            </ruleList>
+        </actionGroup>
+    </preInstallationActionList>
     <postInstallationActionList>
         <runProgram>
             <program>open</program>
@@ -160,4 +228,3 @@
         </booleanParameter>
     </parameterList>
 </project>
-

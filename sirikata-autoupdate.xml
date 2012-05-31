@@ -1,0 +1,9 @@
+<autoUpdateProject>
+  <fullName>Sirikata</fullName>
+  <shortName>Sirikata</shortName>
+  <vendor>Sirikata Project</vendor>
+  <leftImage>images/left_side_image.png</leftImage>
+  <logoImage>images/logo.png</logoImage>
+  <disableSplashScreen>1</disableSplashScreen>
+  <singleInstanceCheck>1</singleInstanceCheck>
+</autoUpdateProject>
