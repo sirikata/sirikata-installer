@@ -20,6 +20,7 @@ rm -f sirikata-${VERSION}-mac-installer.dmg
 rm -f sirikata-${VERSION}-win32-installer.exe
 
 # Grab and extract data
+echo "Grabbing and extracting raw packages..."
 ([ -e sirikata-$VERSION-win32.zip ] || wget http://sirikata.com/releases/win32/sirikata-$VERSION-win32.zip) && \
     unzip sirikata-$VERSION-win32.zip
 
@@ -50,9 +51,9 @@ else
     ${INSTALLBUILDER} build sirikata-$VERSION.xml windows
     ${INSTALLBUILDER} build sirikata-$VERSION.xml osx
     echo "Copying to current directory..."
-    cp -r `dirname ${INSTALLBUILDER}`/../output/sirikata-${VERSION}-osx-installer.app sirikata-${VERSION}-mac-installer.app
+    cp -r `dirname ${INSTALLBUILDER}`/../output/Sirikata-${VERSION}-osx-installer.app sirikata-${VERSION}-mac-installer.app
     genisoimage -D -V "sirikata-${VERSION}" -no-pad -r -apple -root sirikata-${VERSION}-mac-installer.app -o sirikata-${VERSION}-mac-installer.dmg sirikata-${VERSION}-mac-installer.app
-    cp -r `dirname ${INSTALLBUILDER}`/../output/sirikata-${VERSION}-windows-installer.exe sirikata-${VERSION}-win32-installer.exe
+    cp -r `dirname ${INSTALLBUILDER}`/../output/Sirikata-${VERSION}-windows-installer.exe sirikata-${VERSION}-win32-installer.exe
     echo "Done"
 
     rm sirikata-${VERSION}.xml
