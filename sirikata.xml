@@ -137,6 +137,14 @@
                     <windowsIcon></windowsIcon>
                     <windowsPath>${installdir}/</windowsPath>
                 </startMenuShortcut>
+                <startMenuLinkShortcut>
+                    <comment>Launch a web browser pointing to a list of public Sirikata worlds</comment>
+                    <name>Public Sirikata Worlds</name>
+                    <runAsAdmin>0</runAsAdmin>
+                    <runInTerminal>0</runInTerminal>
+                    <url>http://sirikata.com/wiki/index.php?title=List_of_Worlds</url>
+                    <windowsIcon></windowsIcon>
+                </startMenuLinkShortcut>
             </startMenuShortcutList>
         </component>
         <component>
