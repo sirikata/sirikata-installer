@@ -93,8 +93,8 @@
     </componentList>
     <postInstallationActionList>
         <runProgram>
-            <program>${installdir}/bin/slauncher</program>
-            <programArguments>--register=true</programArguments>
+            <program>open</program>
+            <programArguments>${installdir}/lib/sirikata/slauncher_helper.app</programArguments>
             <ruleList>
                 <platformTest>
                     <type>osx</type>
