@@ -295,7 +295,8 @@ update_download_location = ${system_temp_directory}
     <vendor>Sirikata Project</vendor>
     <finalPageActionList>
         <launchBrowser>
-            <explanation>Launch page with list of public worlds</explanation>
+            <progressText>View list of public worlds</progressText>
+            <explanation>You can join Sirikata worlds by clicking links in your browser. This page has a list of example worlds you can join to test out Sirikata.</explanation>
             <run>${is_fresh_install}</run>
             <url>http://sirikata.com/wiki/index.php?title=List_of_Worlds</url>
         </launchBrowser>
@@ -323,4 +324,3 @@ update_download_location = ${system_temp_directory}
         </booleanParameter>
     </parameterList>
 </project>
-
