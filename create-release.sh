@@ -101,7 +101,7 @@ else
     echo "   e.g."
     echo "    scp sirikata-${VERSION}-win32-installer.exe user@server:sirikata.com/releases/win32/"
     echo "    scp sirikata-${VERSION}-mac-installer.dmg user@server:sirikata.com/releases/mac/"
-    echo "    scp sirikata-${VERSION}-mac-installer.dmg user@server:sirikata.com/releases/mac/"
+    echo "    scp sirikata-${VERSION}-mac-installer.tgz user@server:sirikata.com/releases/mac/"
     echo "    scp update.xml user@server:sirikata.com/releases/"
     echo
 
