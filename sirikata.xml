@@ -4,6 +4,8 @@
     <version>__VERSION__</version>
     <leftImage>images/left_side_image.png</leftImage>
     <logoImage>images/logo.png</logoImage>
+    <windowsExecutableIcon>images/sirikata_windows.ico</windowsExecutableIcon>
+    <osxApplicationBundleIcon>images/sirikata_osx.icns</osxApplicationBundleIcon>
     <componentList>
         <component>
             <name>Sirikata</name>
