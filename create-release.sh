@@ -78,8 +78,10 @@ else
     echo "Copying to current directory..."
     # Copy installer app, works for both regular and update
     cp -r `dirname ${INSTALLBUILDER}`/../output/Sirikata-${VERSION}-osx-installer.app sirikata-${VERSION}-mac-installer.app
-    # Generate dmg for regular installs
-    genisoimage -D -V "sirikata-${VERSION}" -no-pad -r -apple -root sirikata-${VERSION}-mac-installer.app -o sirikata-${VERSION}-mac-installer.dmg sirikata-${VERSION}-mac-installer.app
+    # Generate dmg for regular installs -- the -root setting is just
+    # the name of the .app we create at the top level, which we rename
+    # here from the copy we have to make it clearer for users
+    genisoimage -D -V "sirikata-${VERSION}" -no-pad -r -apple -root "Install Sirikata ${VERSION}.app" -o sirikata-${VERSION}-mac-installer.dmg sirikata-${VERSION}-mac-installer.app
     # Regular archive for updater
     tar -czf sirikata-${VERSION}-mac-installer.tgz sirikata-${VERSION}-mac-installer.app
     # Copy the windows installer
