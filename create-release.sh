@@ -38,6 +38,7 @@ echo "Grabbing and extracting raw packages..."
 # the README and LICENSE from here currently.
 ([ -e sirikata.git ] || git clone git://github.com/sirikata/sirikata.git sirikata.git) && \
     cd sirikata.git && \
+    git fetch origin && \
     git checkout v${VERSION} && \
     cd ..
 
